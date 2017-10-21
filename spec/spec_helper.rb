@@ -1,6 +1,7 @@
 require 'capybara/rspec'
 require 'capybara'
 require 'rspec'
+require './app/models/link'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
