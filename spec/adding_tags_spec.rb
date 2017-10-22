@@ -8,4 +8,14 @@ feature 'Adding tags' do
     link = Link.first
     expect(link.tags.map(&:name)).to include('education')
   end
+
+  scenario 'so that I can add multiple tags' do
+    visit 'links/new'
+    fill_in 'url', with: 'http://www.books.com'
+    fill_in 'title', with: 'About books'
+    fill_in 'tags', with: 'reading, books'
+    click_button 'Create link'
+    link = Link.first
+    expect(link.tags.map(&:name)).to include('reading','books')
+  end
 end
