@@ -1,18 +1,28 @@
-<h2> New Link </h2>
-
-<form action='/links' method='POST'>
-  <label for='title'>
-    Title:
-    <input type='text' name='title' />
-  </label>
-  <label for='url'>
-    URL:
-    <input type='text' name='url' />
-  </label>
-  <label for='tags'>
-    Tags:
-    <input type="text" name='tags' />
-  </label>
-
-  <input class="btn btn-primary" type='submit' value='Create link'>
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3> New Link </h3>
+        <form action='/links' method='POST'>
+          <div class="form-group">
+          <label for='title'>
+            Title:
+            <input type='text' name='title' class="form-control" id="exampleInputEmail1" />
+          </label>
+        </div>
+        <div class="form-group">
+          <label for='url'>
+            URL:
+            <input type='text' name='url' class="form-control" id="exampleInputEmail1" />
+          </label>
+        </div>
+        <div class="form-group">
+          <label for='tags'>
+            Tags:
+            <input type="text" name='tags' class="form-control" id="exampleInputEmail1" />
+          </label>
+        </div>
+          <input class="btn btn-primary" type='submit' value='Create link'>
+        </form>
+    </div>
+  </div>
+</div>

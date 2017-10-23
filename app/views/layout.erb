@@ -12,24 +12,32 @@
 
   <body>
     <nav class="navbar navbar-light bg-light">
-      <span class="navbar-brand mb-0 h1">Bookmarks. Your way of remembering</span>
-    </nav>
+      <div class=info-position>
+      <span>
+        <img src="/img/navbar.png" width="50" height="50" class="d-inline-block align-top" alt="">
+        Bookmarks. Your way of remembering </span></div>
 
     <% if current_user %>
-      Welcome, <%= current_user.email %>
+    <div class=welcome-message>
+      <span>Welcome, <%= current_user.email %>
       <form method='post' action='/sessions'>
         <input type='hidden' name='_method' value='delete'>
-        <input type='submit' value='Sign out'>
-      </form>
+        <input class="btn btn-primary" type='submit' value='Sign out'>
+      </form></span></div>
     <% end %>
 
+  </nav>
+
     <% if flash[:errors] && !flash[:errors].empty? %>
-      Please refer to the following errors below:
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Please refer to the following errors below:</h4>
+      <hr>
       <ul id='errors'>
         <% flash[:errors].each do |error| %>
-          <li><%= error %></li>
+          <li class="mb-0"><%= error %></li>
         <% end %>
       </ul>
+    </div>
     <% end %>
 
     <% if flash[:notice] %>
