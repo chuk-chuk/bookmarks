@@ -22,3 +22,6 @@ body {
   text-align: right;
   padding-right: 60px;
 }
+h1 {
+  color: red;
+}
