@@ -18,7 +18,7 @@ class Bookmarks < Sinatra::Base
   end
 
   get '/links' do
-    @links = Link.all
+    @links = Link.all(:order => [:created_at.desc])
     erb :'links/index'
   end
 
