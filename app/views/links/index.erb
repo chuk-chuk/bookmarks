@@ -1,15 +1,16 @@
 <div class="container">
   <div class="row">
-    <h1 class='title-links'> Links </h1>
-      <ul class='links'>
+    <h3 class='title-links'> LINKS MENU </h3>
+      <ul class="list-group" >
         <% @links.each do |link| %>
-          <li>
+          <li class="list-group-item">
             Title: <%= link.title %>
             URL: <%= link.url %>
-            Tags: <%= link.tags.map(&:name).join(', ') %>
+            Tags: <%= link.tags.map(&:name).join(', ') %><br>
+            Added: <%= link.created_at.strftime("%d %b %H:%M") %>
           </li>
         <% end %>
       </ul>
-      <a href="links/new">Add new here</a>
+      <a href="links/new" class="btn btn-primary">add new</a>
     </div>
 </div>
